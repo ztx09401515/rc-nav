@@ -32,10 +32,6 @@ class Item extends React.Component<ItemProps, any> {
         href: PropTypes.string,
     }
 
-    static defaultProps = {
-        itemContent: styles.itemContent
-    }
-
     handlerClick(pxe) {
         if (this.props.onClick) {
             this.props.onClick.apply(this, [pxe]);
@@ -64,9 +60,7 @@ class SubNav extends React.Component<SubNavProp, any> {
         href: PropTypes.string,
 
     }
-
     state = {}
-
 
     render() {
         let props = this.props, state = this.state, display = props.display,
@@ -82,8 +76,8 @@ class SubNav extends React.Component<SubNavProp, any> {
                                 return <li key={index} onClick={el.props.onClick}
                                            className={el.props.selected ? mergeClass(styles.navItem, styles.itemSelect) : styles.navItem}>
                                     <a href={el.props.href} onClick={el.props.onClick}><span><Type {...el.props}
-                                                                                             float={'none'}
-                                                                                             key={index}></Type></span></a>
+                                                                                                   float={'none'}
+                                                                                                   key={index}></Type></span></a>
 
                                 </li>
                             case SubNav:
@@ -96,7 +90,7 @@ class SubNav extends React.Component<SubNavProp, any> {
                                     nstate[index] = true;
                                     this.setState(nstate);
                                 }} key={index}
-                                           className={ el.props.selected ?mergeClass(styles.navItem,styles.itemSelect) : styles.navItem}>
+                                           className={el.props.selected ? mergeClass(styles.navItem, styles.itemSelect) : styles.navItem}>
                                     <a href={el.props.href} onClick={el.props.onTitleClick}><span><Type
                                         key={index} {...el.props}
                                         display={state[index] ? true : false}
@@ -155,7 +149,7 @@ export default class Nav extends React.Component<NavProps, any> {
                                        className={el.props.selected ? mergeClass(styles.navItem, styles.itemSelect) : styles.navItem}
                                        style={Object.assign({}, {float: props.mode === 'vertical' ? 'none' : 'left'}, props.navItemStyle ? props.navItemStyle : null)}>
                                 <a href={el.props.href} onClick={el.props.onClick}><span><Type {...el.props}
-                                                                                         key={index}></Type></span></a>
+                                                                                               key={index}></Type></span></a>
 
                             </li>
                         case SubNav:
@@ -172,11 +166,9 @@ export default class Nav extends React.Component<NavProps, any> {
                                        className={el.props.selected ? mergeClass(styles.navItem, styles.itemSelect) : styles.navItem}
                                        style={Object.assign({}, {float: props.mode == 'vertical' ? 'none' : 'left'}, props.navItemStyle ? props.navItemStyle : null)}>
                                 <a href={el.props.href} onClick={el.props.onClick}><span><Type {...el.props}
-                                                                                         mode={props.mode}
-                                                                                         display={state[index] ? true : false}
-                                                                                         key={index}></Type></span></a>
-
-
+                                                                                               mode={props.mode}
+                                                                                               display={state[index] ? true : false}
+                                                                                               key={index}></Type></span></a>
                             </li>
                         default:
                             break;

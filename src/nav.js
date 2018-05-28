@@ -89,10 +89,6 @@ _defineProperty(Item, "propTypes", {
   href: _propTypes.default.string
 });
 
-_defineProperty(Item, "defaultProps", {
-  itemContent: _nav.default.itemContent
-});
-
 var SubNav =
 /*#__PURE__*/
 function (_React$Component2) {
