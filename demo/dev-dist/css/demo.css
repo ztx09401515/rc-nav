@@ -1,0 +1,141 @@
+@font-face {
+  font-family: 'commonIcon';
+  src: url(../8fa2b370fonts/common/icomoon.woff) format('woff');
+}
+.nav {
+  width: 100%;
+  -webkit-padding-start: 0px;
+  list-style: none;
+}
+.nav:after {
+  display: block;
+  visibility: hidden;
+  content: '';
+  clear: both;
+}
+.nav .navItem {
+  position: relative;
+  min-width: 90px;
+  min-height: 35px;
+  padding: 0px 0px;
+  text-align: center;
+  cursor: pointer;
+  width: auto;
+  display: table;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  -o-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.nav .navItem > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.nav .navItem > a:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.nav .navItem > a > span {
+  display: inline-block;
+  position: relative;
+  margin: 0px auto;
+}
+.nav .navItem.itemSelect {
+  border-bottom: 3px solid #1890ff;
+}
+.nav .navItem:hover {
+  border-bottom: 3px solid #1890ff;
+  background-color: #EFEFEF;
+}
+.nav .subNav {
+  min-width: 50px;
+  list-style: none;
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  padding: 0px;
+  background-color: #fff;
+}
+.nav .subNavVertical {
+  left: 100%;
+  top: 0px;
+}
+.nav .subNav .navItem {
+  position: relative;
+  text-align: left;
+  margin: 0px;
+  min-width: 150px;
+}
+.nav .subNav .navItem > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.nav .subNav .navItem > a:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.nav .subNav .navItem > a > span {
+  display: inline-block;
+  position: relative;
+  margin: 0px 0px 0px 18px;
+  -webkit-transition: margin-left 1.5s;
+  -moz-transition: margin-left 1.5s;
+  -ms-transition: margin-left 1.5s;
+  -o-transition: margin-left 1.5s;
+  transition: margin-left 1.5s;
+}
+.nav .subNav .navItem > a > span:before {
+  position: absolute;
+  left: -16px;
+  top: 2px;
+  font-family: commonIcon;
+  content: '\E900';
+  font-weight: bold;
+  color: #1890ff;
+}
+.nav .subNav .navItem > a > span:after {
+  position: absolute;
+  right: -100px;
+  top: 2px;
+  font-family: commonIcon;
+  opacity: 0;
+  -webkit-transform: rotateZ(180deg);
+  -moz-transform: rotateZ(180deg);
+  -ms-transform: rotateZ(180deg);
+  -o-transform: rotateZ(180deg);
+  transform: rotateZ(180deg);
+  -webkit-transition: right 0.3s ease-out, opacity 0.3s ease-in;
+  -moz-transition: right 0.3s ease-out, opacity 0.3s ease-in;
+  -ms-transition: right 0.3s ease-out, opacity 0.3s ease-in;
+  -o-transition: right 0.3s ease-out, opacity 0.3s ease-in;
+  transition: right 0.3s ease-out, opacity 0.3s ease-in;
+  content: '\E900';
+  font-weight: bold;
+  color: #1890ff;
+}
+.nav .subNav .navItem > a:hover {
+  border-bottom: 3px solid #1890ff;
+}
+.nav .subNav .navItem > a:hover > span {
+  margin-left: 22px;
+}
+.nav .subNav .navItem > a:hover > span:after {
+  right: -16px;
+  opacity: 1;
+}
+
+
+/*# sourceMappingURL=demo.css.map*/
