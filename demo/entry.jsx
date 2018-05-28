@@ -5,7 +5,6 @@ import Nav from '../src/nav.tsx';
 const Item = Nav.Item;
 const SubNav = Nav.SubNav;
 
-import _ from 'underscore'
 
 class Page extends React.Component {
     state = {
