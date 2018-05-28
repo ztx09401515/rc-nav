@@ -1,5 +1,6 @@
 @primary: #1890ff;
 @tag: @primary;
+@tagCode:'\e900';
 .clearfix() {
   &:after {
     display: block;
@@ -121,7 +122,7 @@
             opacity: 0;
             .pre(transform; rotateZ(180deg));
             .pre(transition; right 0.3s ease-out, opacity 0.3s ease-in;);
-            content: '\e900';
+            content: @tagCode;
             font-weight: bold;
             color: @tag;
           }
