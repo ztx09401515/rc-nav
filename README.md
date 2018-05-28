@@ -1,26 +1,26 @@
 rc-nav
 ==========
-###### [online demo](https://ztx09401515.github.io/rc-nav/demo.html)
+### [online demo](https://ztx09401515.github.io/rc-nav/demo.html)
 
-### NavProp
- ##### mode
+## NavProp
+ ### mode
 type?:'horizontal' | 'vertical'
 default:'horizontal'
-### ItemProp
- ##### selected
+## ItemProp
+ ### selected
  type?:boolean,
- ##### onClick
+ ### onClick
  type?:(e: React.SyntheticEvent) => void,
- ##### href
+ ### href
  type?:string
-### SubNavProp
- ##### onTitleClick?
+## SubNavProp
+ ### onTitleClick?
  type:(e: React.SyntheticEvent) => void,
- ##### selected
+ ### selected
  type?: boolean,
- ##### display
+ ### display
  type?: boolean,
- ##### title
+ ### title
  type: React.ReactNode,
- ##### href
+ ### href
  type?: string,
