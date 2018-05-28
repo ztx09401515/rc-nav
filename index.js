@@ -1,1 +1,1 @@
-module.exports=require('./src/nav')
+module.exports=require('./lib/nav')
