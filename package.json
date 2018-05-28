@@ -1,6 +1,6 @@
 {
   "name": "rc-nav",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "repository":{
     "type":"git",
     "url":"https://github.com/ztx09401515/rc-nav"
@@ -20,18 +20,17 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@types/react": "^16.3.14",
-    "antd": "^3.5.3",
-    "highlight.js": "^9.12.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
+    "underscore": "^1.9.0"
+  },
+  "devDependencies": {
     "react-dom": "^16.3.2",
     "react-syntax-highlighter": "^7.0.4",
     "refractor": "^2.4.1",
     "typescript": "^2.8.3",
-    "underscore": "^1.9.0"
-  },
-  "devDependencies": {
+    "@types/react": "^16.3.14",
+    "highlight.js": "^9.12.0",
     "@babel/core": "^7.0.0-beta.49",
     "@babel/plugin-proposal-class-properties": "^7.0.0-beta.49",
     "@babel/plugin-transform-typescript": "^7.0.0-beta.49",
