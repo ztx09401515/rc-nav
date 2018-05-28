@@ -39,8 +39,13 @@ var tsx=function () {
             var namepat=/\\([^\\]+?)$/;
             var name=namepat.exec(file.history[0])[1];
             var nname=replaceTojs(name);
-            file.history.push(file.base+nname);
-            return file.base;
+            var npath=file.history[0].replace(/\\[^\\]+$/,'\\'+nname)
+            file.history.push(npath);
+            var cwdstring=file.cwd+'\\src';
+            var relative=file.history[1].replace(cwdstring,'');
+            relative=relative.replace(/\\[^\\]+$/,'');
+            return file.cwd+'\\lib'+relative;
+
         }))
 }
 gulp.task('babel-tsx', tsx);

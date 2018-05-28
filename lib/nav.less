@@ -1,0 +1,148 @@
+@primary: #1890ff;
+@tag: @primary;
+@tagCode:'\e900';
+.clearfix() {
+  &:after {
+    display: block;
+    visibility: hidden;
+    content: '';
+    clear: both;
+  }
+}
+
+.verticalMiddle() {
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+.pre(@style;@value) {
+  -webkit-@{style}: @value;
+  -moz-@{style}: @value;
+  -ms-@{style}: @value;
+  -o-@{style}: @value;
+    @{style}: @value;
+}
+
+@font-face {
+  font-family: 'commonIcon';
+  src: url(../fonts/common/icomoon.woff) format('woff');
+}
+
+.nav {
+  width: 100%;
+  -webkit-padding-start:0px;
+  list-style: none;
+  .clearfix();
+  .navItem {
+    position: relative;
+    min-width: 90px;
+    min-height: 35px;
+    padding: 0px 0px;
+    text-align: center;
+    cursor: pointer;
+    width: auto;
+    display: table;
+    .pre(box-sizing;content-box;);
+    & > a {
+      color:black;
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      .verticalMiddle();
+      & > span {
+        display: inline-block;
+        margin: 0px auto;
+        //position:absolute;
+        //left:50%;
+        //top:50%;
+        //transform: translate(-50%,-50%);
+      }
+    }
+    &.itemSelect {
+      border-bottom: 3px solid @primary;
+    }
+    &:hover {
+      border-bottom: 3px solid @primary;
+      background-color: #EFEFEF;
+    }
+  }
+  .subNav {
+    min-width: 50px;
+    list-style: none;
+    position: absolute;
+    left: 0px;
+    top: 100%;
+    &Vertical {
+      left:100%;
+      top:0px;
+    }
+    padding: 0px;
+
+    background-color: #fff;
+    .navItem {
+      position: relative;
+      text-align: left;
+      margin: 0px;
+      min-width: 150px;
+      & > a {
+        color:black;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        .verticalMiddle();
+        & > span {
+          display: inline-block;
+          position: relative;
+          margin: 0px 0px 0px 18px;
+          .pre(transition; margin-left 1.5s);
+          &:before {
+            position: absolute;
+            left: -16px;
+            top: 2px;
+            font-family: commonIcon;
+            content: '\e900';
+            font-weight: bold;
+            color: @tag;
+          }
+          &:after {
+            position: absolute;
+            right: -100px;
+            top: 2px;
+            font-family: commonIcon;
+            opacity: 0;
+            .pre(transform; rotateZ(180deg));
+            .pre(transition; right 0.3s ease-out, opacity 0.3s ease-in;);
+            content: @tagCode;
+            font-weight: bold;
+            color: @tag;
+          }
+
+        }
+        &:hover {
+          border-bottom: 3px solid @primary;
+          & > span {
+            &:after {
+              right: -16px;
+              opacity: 1;
+            }
+            margin-left: 22px;
+          }
+        }
+
+      }
+
+    }
+
+  }
+}
+
