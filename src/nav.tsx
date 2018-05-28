@@ -126,7 +126,7 @@ interface NavProps extends Common {
     mode: 'horizontal' | 'vertical',
 }
 
-class Nav extends React.Component<NavProps, any> {
+export default class Nav extends React.Component<NavProps, any> {
     state = {}
     static propTypes = {
         style: PropTypes.object,
@@ -192,4 +192,3 @@ class Nav extends React.Component<NavProps, any> {
     }
 }
 
-export default Nav;

@@ -22,8 +22,8 @@ const replaceTojs=function (name) {
     var nname=name.replace(exPat,'.js')
     return nname;
 }
-const options={presets: ['@babel/preset-env','@babel/preset-react'],
-    plugins:['babel-plugin-syntax-object-rest-spread','@babel/plugin-transform-typescript','@babel/plugin-proposal-class-properties'],
+const options={presets: ['@babel/preset-env'],
+    plugins:['babel-plugin-syntax-object-rest-spread','@babel/plugin-transform-typescript','babel-plugin-transform-react-jsx','@babel/plugin-proposal-class-properties'],
 }
 
 var tsx=function () {
