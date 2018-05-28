@@ -113,16 +113,6 @@ function (_React$Component2) {
   }
 
   _createClass(SubNav, [{
-    key: "handlerClick",
-    value: function handlerClick(pxe) {
-      if (this.props.onTitleClick) {
-        this.props.onTitleClick.apply(this, [pxe]);
-      }
-    } // componentWillReceiveProps(nextprops) {
-    //     this.setState({display: nextprops.display});
-    // }
-
-  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -146,9 +136,9 @@ function (_React$Component2) {
                 return _react.default.createElement("li", {
                   key: index,
                   onClick: el.props.onClick,
-                  className: _nav.default.navItem
+                  className: el.props.selected ? mergeClass(_nav.default.navItem, _nav.default.itemSelect) : _nav.default.navItem
                 }, _react.default.createElement("a", {
-                  href: el.href,
+                  href: el.props.href,
                   onClick: el.props.onClick
                 }, _react.default.createElement("span", null, _react.default.createElement(Type, _extends({}, el.props, {
                   float: 'none',
@@ -170,11 +160,10 @@ function (_React$Component2) {
                     _this2.setState(nstate);
                   },
                   key: index,
-                  onClick: el.props.onTitleClick,
-                  className: _nav.default.navItem
+                  className: el.props.selected ? mergeClass(_nav.default.navItem, _nav.default.itemSelect) : _nav.default.navItem
                 }, _react.default.createElement("a", {
-                  href: el.href,
-                  onClick: el.props.onClick
+                  href: el.props.href,
+                  onClick: el.props.onTitleClick
                 }, _react.default.createElement("span", null, _react.default.createElement(Type, _extends({
                   key: index
                 }, el.props, {
@@ -199,6 +188,7 @@ function (_React$Component2) {
 
 _defineProperty(SubNav, "propTypes", {
   onTitleClick: _propTypes.default.func,
+  selected: _propTypes.default.bool,
   display: _propTypes.default.bool,
   title: _propTypes.default.node.isRequired,
   href: _propTypes.default.string
@@ -258,7 +248,7 @@ function (_React$Component3) {
                   float: props.mode === 'vertical' ? 'none' : 'left'
                 }, props.navItemStyle ? props.navItemStyle : null)
               }, _react.default.createElement("a", {
-                href: el.href,
+                href: el.props.href,
                 onClick: el.props.onClick
               }, _react.default.createElement("span", null, _react.default.createElement(Type, _extends({}, el.props, {
                 key: index
@@ -283,7 +273,7 @@ function (_React$Component3) {
                   float: props.mode == 'vertical' ? 'none' : 'left'
                 }, props.navItemStyle ? props.navItemStyle : null)
               }, _react.default.createElement("a", {
-                href: el.href,
+                href: el.props.href,
                 onClick: el.props.onClick
               }, _react.default.createElement("span", null, _react.default.createElement(Type, _extends({}, el.props, {
                 mode: props.mode,
