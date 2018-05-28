@@ -49,6 +49,7 @@ class Item extends React.Component<ItemProps, any> {
 
 interface SubNavProp extends Common {
     onTitleClick?: (e: React.SyntheticEvent) => void,
+    selected?: boolean,
     display?: boolean,
     title: React.ReactNode,
     href: string,
@@ -57,6 +58,7 @@ interface SubNavProp extends Common {
 class SubNav extends React.Component<SubNavProp, any> {
     static propTypes = {
         onTitleClick: PropTypes.func,
+        selected: PropTypes.bool,
         display: PropTypes.bool,
         title: PropTypes.node.isRequired,
         href: PropTypes.string,
@@ -65,15 +67,6 @@ class SubNav extends React.Component<SubNavProp, any> {
 
     state = {}
 
-    handlerClick(pxe) {
-        if (this.props.onTitleClick) {
-            this.props.onTitleClick.apply(this, [pxe]);
-        }
-    }
-
-    // componentWillReceiveProps(nextprops) {
-    //     this.setState({display: nextprops.display});
-    // }
 
     render() {
         let props = this.props, state = this.state, display = props.display,
@@ -86,8 +79,9 @@ class SubNav extends React.Component<SubNavProp, any> {
                         var Type = el.type;
                         switch (Type) {
                             case Item:
-                                return <li key={index} onClick={el.props.onClick} className={styles.navItem}>
-                                    <a href={el.href} onClick={el.props.onClick}><span><Type {...el.props}
+                                return <li key={index} onClick={el.props.onClick}
+                                           className={el.props.selected ? mergeClass(styles.navItem, styles.itemSelect) : styles.navItem}>
+                                    <a href={el.props.href} onClick={el.props.onClick}><span><Type {...el.props}
                                                                                              float={'none'}
                                                                                              key={index}></Type></span></a>
 
@@ -101,12 +95,13 @@ class SubNav extends React.Component<SubNavProp, any> {
                                     let nstate = {};
                                     nstate[index] = true;
                                     this.setState(nstate);
-                                }} key={index} onClick={el.props.onTitleClick}
-                                           className={styles.navItem}>
-                                    <a href={el.href} onClick={el.props.onClick}><span><Type key={index} {...el.props}
-                                                                                             display={state[index] ? true : false}
-                                                                                             mode={props.mode}
-                                                                                             float='none'></Type></span></a>
+                                }} key={index}
+                                           className={ el.props.selected ?mergeClass(styles.navItem,styles.itemSelect) : styles.navItem}>
+                                    <a href={el.props.href} onClick={el.props.onTitleClick}><span><Type
+                                        key={index} {...el.props}
+                                        display={state[index] ? true : false}
+                                        mode={props.mode}
+                                        float='none'></Type></span></a>
                                 </li>
                             default:
                                 break;
@@ -122,7 +117,6 @@ class SubNav extends React.Component<SubNavProp, any> {
 }
 
 interface NavProps extends Common {
-
     mode: 'horizontal' | 'vertical',
 }
 
@@ -157,9 +151,10 @@ export default class Nav extends React.Component<NavProps, any> {
                                 let nstate = {};
                                 nstate[index] = true;
                                 thiscomp.setState(nstate);
-                            }} className={ el.props.selected ?mergeClass(styles.navItem,styles.itemSelect) : styles.navItem}
+                            }}
+                                       className={el.props.selected ? mergeClass(styles.navItem, styles.itemSelect) : styles.navItem}
                                        style={Object.assign({}, {float: props.mode === 'vertical' ? 'none' : 'left'}, props.navItemStyle ? props.navItemStyle : null)}>
-                                <a href={el.href} onClick={el.props.onClick}><span><Type {...el.props}
+                                <a href={el.props.href} onClick={el.props.onClick}><span><Type {...el.props}
                                                                                          key={index}></Type></span></a>
 
                             </li>
@@ -173,9 +168,10 @@ export default class Nav extends React.Component<NavProps, any> {
                                 let nstate = {};
                                 nstate[index] = true;
                                 thiscomp.setState(nstate);
-                            }} className={el.props.selected ?mergeClass(styles.navItem,styles.itemSelect) : styles.navItem}
+                            }}
+                                       className={el.props.selected ? mergeClass(styles.navItem, styles.itemSelect) : styles.navItem}
                                        style={Object.assign({}, {float: props.mode == 'vertical' ? 'none' : 'left'}, props.navItemStyle ? props.navItemStyle : null)}>
-                                <a href={el.href} onClick={el.props.onClick}><span><Type {...el.props}
+                                <a href={el.props.href} onClick={el.props.onClick}><span><Type {...el.props}
                                                                                          mode={props.mode}
                                                                                          display={state[index] ? true : false}
                                                                                          key={index}></Type></span></a>
