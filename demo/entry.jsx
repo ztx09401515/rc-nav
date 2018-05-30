@@ -24,11 +24,15 @@ class Page extends React.Component {
                 <SubNav key={1} title={'菜单1'}>
                     <Item key={0}>子选项1</Item>
                     <Item key={1}>子选项2</Item>
-                    <SubNav title={'子菜单1'}>
+                    <SubNav key={2} title={'子菜单1'}>
                         <Item key={0}>三级选项1</Item>
                         <Item key={1}>三级选项2</Item>
                     </SubNav>
-                    <SubNav title={'子菜单2'}>
+                    <SubNav key={3} title={'子菜单2'}>
+                        <Item key={0}>三级选项1</Item>
+                        <Item key={1}>三级选项2</Item>
+                    </SubNav>
+                    <SubNav key={4} title={'subitem1'}>
                         <Item key={0}>三级选项1</Item>
                         <Item key={1}>三级选项2</Item>
                     </SubNav>
