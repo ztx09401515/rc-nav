@@ -1,18 +1,22 @@
 {
   "name": "rc-nav",
   "version": "1.0.6",
-  "repository":{
-    "type":"git",
-    "url":"https://github.com/ztx09401515/rc-nav"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ztx09401515/rc-nav"
   },
   "description": "react navigation",
-  "keywords": ["react","nav","navigation","rc-nav"],
+  "keywords": [
+    "react",
+    "nav",
+    "navigation",
+    "rc-nav"
+  ],
   "main": "index.js",
   "files": [
     "lib",
     "fonts"
   ],
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack-dev": "webpack --config webpack.config.js"

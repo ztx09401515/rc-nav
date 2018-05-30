@@ -73,6 +73,9 @@
   margin: 0px;
   min-width: 150px;
 }
+.nav .subNav .navItem:hover {
+  border-bottom: 3px solid #1890ff;
+}
 .nav .subNav .navItem > a {
   color: black;
   display: block;
@@ -81,6 +84,12 @@
   position: absolute;
   top: 0px;
   left: 0px;
+  padding-left: 16px;
+  -webkit-transition: padding-left 0.3s;
+  -moz-transition: padding-left 0.3s;
+  -ms-transition: padding-left 0.3s;
+  -o-transition: padding-left 0.3s;
+  transition: padding-left 0.3s;
 }
 .nav .subNav .navItem > a:before {
   content: '';
@@ -91,12 +100,7 @@
 .nav .subNav .navItem > a > span {
   display: inline-block;
   position: relative;
-  margin: 0px 0px 0px 18px;
-  -webkit-transition: margin-left 1.5s;
-  -moz-transition: margin-left 1.5s;
-  -ms-transition: margin-left 1.5s;
-  -o-transition: margin-left 1.5s;
-  transition: margin-left 1.5s;
+  margin: 0px;
 }
 .nav .subNav .navItem > a > span:before {
   position: absolute;
@@ -128,10 +132,7 @@
   color: #1890ff;
 }
 .nav .subNav .navItem > a:hover {
-  border-bottom: 3px solid #1890ff;
-}
-.nav .subNav .navItem > a:hover > span {
-  margin-left: 22px;
+  padding-left: 22px;
 }
 .nav .subNav .navItem > a:hover > span:after {
   right: -16px;

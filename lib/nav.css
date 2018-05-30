@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'commonIcon';
-  src: url(data:application/font-woff;base64,d09GRgABAAAAAASgAAsAAAAABFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAABCAAAAGAAAABgDxIFKmNtYXAAAAFoAAAAVAAAAFQXVtKHZ2FzcAAAAbwAAAAIAAAACAAAABBnbHlmAAABxAAAAJgAAACYpMz2zGhlYWQAAAJcAAAANgAAADYQHzJ9aGhlYQAAApQAAAAkAAAAJAZhA8ZobXR4AAACuAAAABQAAAAUCgABS2xvY2EAAALMAAAADAAAAAwAKABgbWF4cAAAAtgAAAAgAAAAIAAHABluYW1lAAAC+AAAAYYAAAGGmUoJ+3Bvc3QAAASAAAAAIAAAACAAAwAAAAMDAAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAA6QADwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADgAAAAKAAgAAgACAAEAIOkA//3//wAAAAAAIOkA//3//wAB/+MXBAADAAEAAAAAAAAAAAAAAAEAAf//AA8AAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQFLAIACnwMAABYAAAEWFAcBDgEXHgE3ATY0JwEmBgcGFhcBAoIGBv7LBwEGBRIHATUVFP7KBxEGBgEGATYBxwUOBf7xBhEHBwEGAQ8SNBIBGQYBBwYSBv7nAAABAAAAAAAAM9H9iV8PPPUACwQAAAAAANcxd0AAAAAA1zF3QAAAAAACnwMAAAAACAACAAAAAAAAAAEAAAPA/8AAAAQAAAAAAAKfAAEAAAAAAAAAAAAAAAAAAAAFBAAAAAAAAAAAAAAAAgAAAAQAAUsAAAAAAAoAFAAeAEwAAQAAAAUAFwABAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABAAcAAAABAAAAAAACAAcAYAABAAAAAAADAAcANgABAAAAAAAEAAcAdQABAAAAAAAFAAsAFQABAAAAAAAGAAcASwABAAAAAAAKABoAigADAAEECQABAA4ABwADAAEECQACAA4AZwADAAEECQADAA4APQADAAEECQAEAA4AfAADAAEECQAFABYAIAADAAEECQAGAA4AUgADAAEECQAKADQApGljb21vb24AaQBjAG8AbQBvAG8AblZlcnNpb24gMS4wAFYAZQByAHMAaQBvAG4AIAAxAC4AMGljb21vb24AaQBjAG8AbQBvAG8Abmljb21vb24AaQBjAG8AbQBvAG8AblJlZ3VsYXIAUgBlAGcAdQBsAGEAcmljb21vb24AaQBjAG8AbQBvAG8AbkZvbnQgZ2VuZXJhdGVkIGJ5IEljb01vb24uAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4ALgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=) format('woff');
+  src: url(../fonts/common/icomoon.woff) format('woff');
 }
 .nav {
   width: 100%;
@@ -73,6 +73,9 @@
   margin: 0px;
   min-width: 150px;
 }
+.nav .subNav .navItem:hover {
+  border-bottom: 3px solid #1890ff;
+}
 .nav .subNav .navItem > a {
   color: black;
   display: block;
@@ -81,6 +84,12 @@
   position: absolute;
   top: 0px;
   left: 0px;
+  padding-left: 16px;
+  -webkit-transition: padding-left 0.3s;
+  -moz-transition: padding-left 0.3s;
+  -ms-transition: padding-left 0.3s;
+  -o-transition: padding-left 0.3s;
+  transition: padding-left 0.3s;
 }
 .nav .subNav .navItem > a:before {
   content: '';
@@ -91,19 +100,14 @@
 .nav .subNav .navItem > a > span {
   display: inline-block;
   position: relative;
-  margin: 0px 0px 0px 18px;
-  -webkit-transition: margin-left 1.5s;
-  -moz-transition: margin-left 1.5s;
-  -ms-transition: margin-left 1.5s;
-  -o-transition: margin-left 1.5s;
-  transition: margin-left 1.5s;
+  margin: 0px;
 }
 .nav .subNav .navItem > a > span:before {
   position: absolute;
   left: -16px;
   top: 2px;
   font-family: commonIcon;
-  content: '\E900';
+  content: '\e900';
   font-weight: bold;
   color: #1890ff;
 }
@@ -123,20 +127,14 @@
   -ms-transition: right 0.3s ease-out, opacity 0.3s ease-in;
   -o-transition: right 0.3s ease-out, opacity 0.3s ease-in;
   transition: right 0.3s ease-out, opacity 0.3s ease-in;
-  content: '\E900';
+  content: '\e900';
   font-weight: bold;
   color: #1890ff;
 }
 .nav .subNav .navItem > a:hover {
-  border-bottom: 3px solid #1890ff;
-}
-.nav .subNav .navItem > a:hover > span {
-  margin-left: 22px;
+  padding-left: 22px;
 }
 .nav .subNav .navItem > a:hover > span:after {
   right: -16px;
   opacity: 1;
 }
-
-
-/*# sourceMappingURL=demo.css.map*/
